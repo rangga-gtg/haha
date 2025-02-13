@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Patrick+Hand&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #FFC3A0, #FF7EB3, #FF6F61, #FFD166);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    overflow: hidden;
+}
+
+/* Animasi Latar Belakang */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 105, 97, 0.6);
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    border: 3px solid #FF6F61;
+}
+
+/* Efek Sparkle */
+.sparkle {
+    font-size: 2.5em;
+    color: #FF477E;
+    animation: sparkle 1.5s infinite alternate;
+    font-family: 'Indie Flower', cursive;
+}
+
+@keyframes sparkle {
+    0% { text-shadow: 0 0 5px #FF9AA2, 0 0 15px #FFC3A0; }
+    100% { text-shadow: 0 0 10px #FF6F61, 0 0 20px #FFD166; }
+}
+
+/* Animasi Fade-in */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards;
+    font-size: 1.2em;
+    color: #FF5A5F;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Tombol */
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #FF5A5F, #FF477E);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 4px 15px rgba(255, 105, 97, 0.4);
+    animation: pulse 1.5s infinite;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #FF6F61, #FF9AA2);
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Animasi Pulse */
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(255, 105, 97, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(255, 105, 97, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(255, 105, 97, 0.6); }
+}
+
+/* Animasi Confetti */
+#confetti-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-100vh); }
+    to { transform: translateY(100vh); }
+}
+
+/* Animasi Balon */
+#balloon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -10%;
+    font-size: 1.8rem;
+    color: red;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Responsif */
+@media (max-width: 500px) {
+    .container {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
